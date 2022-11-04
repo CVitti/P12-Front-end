@@ -34,7 +34,7 @@ git clone https://github.com/CVitti/P12-Back-end.git
 # with NPM
 npm install
 # with Yarn
-yarn
+yarn install
 ```
 
 - Start the application (When currently on P12 directory)
