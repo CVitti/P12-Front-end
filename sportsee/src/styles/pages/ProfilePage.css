@@ -1,0 +1,44 @@
+/* Main section style */
+main{
+    width: 78%;
+    height: calc(94vh - 85px);
+    padding: 3vh 5% 3vh 5%;
+    row-gap: 30px;
+}
+
+/* Welcome text with firstname */
+main h1{
+    font-size: 48px;
+    margin: 0px;
+}
+
+/* firstname text style on the profile page */
+span.firstName{
+    color: #FF0101;
+}
+
+/* Summary text of yesterday's objectives  */
+main h2{
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0px;
+}
+
+/* Block containing charts and data cards */
+.profileDetailsContainer{
+    width: 100%;
+    column-gap: 30px;
+}
+
+/* Low res dekstop screen adjustments */
+@media screen and (max-width:1439px) {
+    main{
+        width: 83%;
+        padding: 2.5% 5% 0px 2.5%;
+        row-gap: 20px;
+    }
+
+    main h1{
+        font-size: 40px;
+    }
+}

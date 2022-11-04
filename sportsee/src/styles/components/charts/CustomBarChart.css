@@ -1,0 +1,15 @@
+/* Chart background and width adjustment*/
+.barChart{
+    width: 100%;
+    height: 35vh;
+    background-color: #FBFBFB;
+}
+
+/* Text styling of chart title */
+.barChartTitle{
+    position: absolute;
+    top: 30px;
+    margin: 0;
+    padding-left: 40px;
+    font-size: 18px;
+}

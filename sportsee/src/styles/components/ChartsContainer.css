@@ -1,0 +1,35 @@
+/* Section contaning all charts */
+.chartSection{
+    width: 75%;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+/* Block containing chart */
+.chartContainer{
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Chart container with restricted width and height ratio */
+.smallWidthChart{
+    width: 30%;
+    max-height: 260px;
+    max-width: 260px;
+    aspect-ratio: 1/1;
+}
+
+/* Tooltip data block to display */
+.tooltipData{
+    text-align: center;
+    font-size: 14px;
+    padding: 15px 10px;
+}
+
+/* Low res dekstop screen adjustments */
+@media screen and (max-width:1439px) {
+    .tooltipData{
+        font-size: 12px;
+        padding: 10px;
+    }
+}

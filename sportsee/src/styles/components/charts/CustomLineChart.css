@@ -1,0 +1,22 @@
+/* Chart background */
+.lineChart{
+    background-color: #FF0000;
+}
+
+/* Text styling of each chart needing a title */
+.lineChartTitle{
+    position: absolute;
+    font-size: 18px;
+    width: 75%;
+    margin: 20px 0px 0px 20px;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+/* Low res dekstop screen adjustments */
+@media screen and (max-width:1439px) {
+    .lineChartTitle{
+        font-size: 15px;
+        margin: 15px 0px 0px 15px;
+    }
+}

@@ -1,0 +1,27 @@
+/* Block containing an activity icon in the side bar */
+div.sideIcon{
+    height: 64px;
+    width: 64px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+}
+
+div.sideIcon img{
+    height: 40px;
+    width: 40px;
+}
+
+/* Low res dekstop screen adjustments */
+@media screen and (max-width:1439px) {
+    div.sideIcon{
+        height: 48px;
+        width: 48px;
+    }
+
+    div.sideIcon img{
+        height: 28px;
+        width: 28px;
+    }
+}

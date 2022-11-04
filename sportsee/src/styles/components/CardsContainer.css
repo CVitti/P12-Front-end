@@ -1,0 +1,7 @@
+/* Section containing all keyData cards */
+.keyDataSection{
+    width: 20%;
+    row-gap: 60px;
+    column-gap: 30px;
+    justify-content: space-between;
+}
