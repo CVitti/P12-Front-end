@@ -40,9 +40,11 @@ yarn install
 - Start the application (When currently on P12 directory)
 
 ```bash
+# Common command
 cd sportsee
+# and then with NPM
 npm start
-# with Yarn
+# or with with Yarn
 yarn start
 ```
 
