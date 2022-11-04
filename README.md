@@ -1,6 +1,6 @@
 # SportSee
 
-![Author](<https://img.shields.io/badge/Author-Cl%C3%A9ment%20VITTI-blue">)
+![Author](<https://img.shields.io/badge/Author-Cl%C3%A9ment%20VITTI-blue>)
 
 ## Frontend
 
