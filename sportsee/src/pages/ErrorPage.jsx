@@ -16,5 +16,4 @@ function ErrorPage(){
         </main>
     );
 }
-
 export default ErrorPage;

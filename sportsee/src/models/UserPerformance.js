@@ -1,5 +1,5 @@
 /**
- * Formatting kind value to display French name instead of index
+ * Formatting kind value to display French name instead of index and reverse their order to be displayed in the chart
  */
 export default class UserPerformance{
     constructor(data){

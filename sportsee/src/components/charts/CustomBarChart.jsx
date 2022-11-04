@@ -14,8 +14,26 @@ import { getMinWeight, getMaxWeight } from "../../utils/utils.js";
 // Proptypes import
 import PropTypes from 'prop-types';
 
-function CustomBarChart({activityProps, CustomTooltip}){
+// Component Proptypes
+CustomBarChart.propTypes = {
+    activityProps : PropTypes.shape({
+        sessions: PropTypes.arrayOf(
+            PropTypes.shape({
+              day: PropTypes.number.isRequired,
+              kilogram: PropTypes.number.isRequired,
+              calories: PropTypes.number.isRequired
+            }),
+        ).isRequired
+    }).isRequired,
+    CustomTooltip : PropTypes.func.isRequired
+}
 
+/**
+ * 
+ * @param {*} param0 activityProps : Object containing data for all user sessions. CustomTooltip : Function used to custom chart tooltip
+ * @returns JSX code for the Activity Barchart
+ */
+function CustomBarChart({activityProps, CustomTooltip}){
     return(
             <div className='chartContainer fullWidthChart barChart'>
                 <h3 className='barChartTitle'>Activité quotidienne</h3>
@@ -32,6 +50,7 @@ function CustomBarChart({activityProps, CustomTooltip}){
                         <CartesianGrid 
                             strokeDasharray="3" 
                             vertical={false}
+                            // Array of lines to draw -> Max weight + 1 and middle weight between max and min weight
                             verticalPoints={[(((getMaxWeight(activityProps) + 1) + (getMinWeight(activityProps) - 2)) / 2), getMaxWeight(activityProps) + 1]}                  
                         />
                         <XAxis 
@@ -92,10 +111,4 @@ function CustomBarChart({activityProps, CustomTooltip}){
             </div>
     );
 }
-
-CustomBarChart.propTypes = {
-    activityProps : PropTypes.object.isRequired,
-    CustomTooltip : PropTypes.func.isRequired
-}
-
 export default CustomBarChart;

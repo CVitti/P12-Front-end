@@ -11,10 +11,27 @@ import { Radar } from 'recharts'; // Individual components
 // Proptypes import
 import PropTypes from 'prop-types';
 
+// Component Proptypes
+CustomRadarChart.propTypes = {
+    performanceProps : PropTypes.shape({
+        data: PropTypes.arrayOf(
+            PropTypes.shape({
+              value: PropTypes.number.isRequired,
+              kind: PropTypes.string.isRequired
+            }),
+        ).isRequired
+    }).isRequired
+}
+
+/**
+ * 
+ * @param {*} param0 activityProps : Object containing all user performance data.
+ * @returns JSX code for the Performance RadarChart
+ */
 function CustomRadarChart({performanceProps}){
     return(
         <div className='flex chartContainer smallWidthChart radarChart'>
-            <ResponsiveContainer>
+            <ResponsiveContainer width="99%" height="99%">
                 <RadarChart 
                     innerRadius={10}
                     outerRadius={80} 
@@ -43,13 +60,8 @@ function CustomRadarChart({performanceProps}){
                         fillOpacity={0.7}
                     />
                 </RadarChart>
-            </ResponsiveContainer>                    
+            </ResponsiveContainer>                             
         </div>
     );
 }
-
-CustomRadarChart.propTypes = {
-    performanceProps : PropTypes.object.isRequired
-}
-
 export default CustomRadarChart;

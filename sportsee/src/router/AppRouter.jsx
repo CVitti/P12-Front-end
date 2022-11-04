@@ -32,5 +32,4 @@ function AppRouter() {
     </React.Fragment>    
   );
 }
-
 export default AppRouter;

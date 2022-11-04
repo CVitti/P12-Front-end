@@ -15,5 +15,4 @@ function Logo() {
         <img src={logoFile} alt="SportSee logo" className="logo"></img>
     );
 }
-
 export default Logo;

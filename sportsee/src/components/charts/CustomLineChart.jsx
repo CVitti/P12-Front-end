@@ -11,8 +11,25 @@ import { Line } from 'recharts'; // Individual components
 // Proptypes import
 import PropTypes from 'prop-types';
 
+// Component Proptypes
+CustomLineChart.propTypes = {
+    sessionsProps : PropTypes.shape({
+        sessions: PropTypes.arrayOf(
+            PropTypes.shape({
+              day: PropTypes.string.isRequired,
+              sessionLength: PropTypes.number.isRequired
+            }),
+        ).isRequired
+    }).isRequired,
+    CustomTooltip : PropTypes.func.isRequired
+}
+
+/**
+ * 
+ * @param {*} param0 sessionsProps : Object containing data for all user sessions. CustomTooltip : Function used to custom chart tooltip
+ * @returns JSX code for the Average Session LineChart
+ */
 function CustomLineChart({sessionsProps, CustomTooltip}){
-    
     return(
         <div className='chartContainer smallWidthChart lineChart'>
                 <h3 className='lineChartTitle'>Durée moyenne des sessions</h3>
@@ -53,10 +70,4 @@ function CustomLineChart({sessionsProps, CustomTooltip}){
             </div>
     );
 }
-
-CustomLineChart.propTypes = {
-    sessionsProps : PropTypes.object.isRequired,
-    CustomTooltip : PropTypes.func.isRequired
-}
-
 export default CustomLineChart;

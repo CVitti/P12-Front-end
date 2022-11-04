@@ -12,9 +12,14 @@ import bodybuilding from "../assets/bodybuilding.svg";
 // React proptypes import
 import PropTypes from 'prop-types';
 
+// Component PropTypes
+SideIcon.propTypes = {
+    iconType : PropTypes.string.isRequired,
+}
+
 /**
  * 
- * @param {*} iconType Type of icon that will be displayed in the sideBar
+ * @param {*} iconType Type of icon that will be displayed in the sideBar (as a string)
  * @returns Code for a sidebar icon
  */
 function SideIcon({iconType}){
@@ -27,9 +32,4 @@ function SideIcon({iconType}){
         </div>
     );
 }
-
-SideIcon.propTypes = {
-    iconType: PropTypes.string.isRequired
-}
-
 export default SideIcon;

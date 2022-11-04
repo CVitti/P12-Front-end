@@ -8,8 +8,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 // Custom components import
-import ChartsContainer from '../components/ChartsContainer';
-import CardsContainer from '../components/CardsContainer';
+import ChartsContainer from '../components/charts/ChartsContainer';
+import CardsContainer from '../components/cards/CardsContainer';
 
 // Fetch functions import from API services and formatting functions
 import { getUserDataById, getUserPerfById, getUserActivityById, getUserAvgSessions } from '../services/fetchAPI.js';
@@ -53,8 +53,8 @@ function ProfilePage(){
 
     // Updating data on ID change
     useEffect(() => {
-        getUserDataById(id).then(data => setCurrentUserData(data));
         getUserPerfById(id).then(data => setCurrentUserPerf(data));
+        getUserDataById(id).then(data => setCurrentUserData(data));
         getUserActivityById(id).then(data => setCurrentUserActivity(data));
         getUserAvgSessions(id).then(data => setCurrentUserSessions(data));
     }, [id]);
@@ -74,12 +74,11 @@ function ProfilePage(){
                 </h2>
 
                 <div className='flex flex--row profileDetailsContainer'>
-                    <ChartsContainer activityProps={currentUserActivity} sessionsProps={currentUserSessions} performanceProps={currentUserPerf} userDataProps={currentUserData}/>
+                    <ChartsContainer activityProps={currentUserActivity} sessionsProps={currentUserSessions} performanceProps={currentUserPerf} userScoreProps={currentUserData.score}/>
                     <CardsContainer keyDataProps={currentUserData.keyData} />                    
                 </div>
             </main>
         );
     }    
 }
-
 export default ProfilePage;
