@@ -2,6 +2,10 @@
  * Formatting session day value to display first capital letter instead of index
  */
 export default class UserSession{
+    /**
+     * @construct UserSession 
+     * @param {object} data User Sessions
+     */
     constructor(data){
         const week = {
             "0": "Dimanche",

@@ -11,7 +11,7 @@ This repository contains all the source code to install and run the SportSee app
 ### Prerequisites
 
 - A text editor `(ex : VSCode )`
-- [Node.js](https://nodejs.org/en/)
+- [Node.js v16.15.0](https://nodejs.org/en/)
 - [Git](https://git-scm.com/)
 
 ### Project setup
@@ -37,7 +37,7 @@ npm install
 yarn install
 ```
 
-- Start the application (When currently on P12 directory)
+- Start the application (When currently on P12 Front-end directory)
 
 ```bash
 # Common command

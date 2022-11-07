@@ -31,15 +31,15 @@ CustomRadarChart.propTypes = {
 function CustomRadarChart({performanceProps}){
     return(
         <div className='flex chartContainer smallWidthChart radarChart'>
-            <ResponsiveContainer width="99%" height="99%">
+            <ResponsiveContainer>
                 <RadarChart 
                     innerRadius={10}
-                    outerRadius={80} 
+                    outerRadius={60} 
                     data={performanceProps.data}
                     >
                     <PolarGrid 
                         radialLines={false}
-                        polarRadius={[10, 20, 40, 60, 80]}
+                        polarRadius={[10, 20, 40, 60]}
                     />
                     <PolarAngleAxis 
                         dataKey='kind' 

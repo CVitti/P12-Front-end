@@ -11,8 +11,10 @@ import { useEffect, useState } from 'react';
 import ChartsContainer from '../components/charts/ChartsContainer';
 import CardsContainer from '../components/cards/CardsContainer';
 
-// Fetch functions import from API services and formatting functions
-import { getUserDataById, getUserPerfById, getUserActivityById, getUserAvgSessions } from '../services/fetchAPI.js';
+// Fetch functions import from API services
+import { getUserDataById, getUserPerfById, getUserActivityById, getUserAvgSessions } from '../services/fetchAPI';
+// Functions import from mockAPI services
+// import { getUserDataById, getUserPerfById, getUserActivityById, getUserAvgSessions } from '../services/mockAPI';
 
 /**
  * 
@@ -53,32 +55,31 @@ function ProfilePage(){
 
     // Updating data on ID change
     useEffect(() => {
-        getUserPerfById(id).then(data => setCurrentUserPerf(data));
-        getUserDataById(id).then(data => setCurrentUserData(data));
-        getUserActivityById(id).then(data => setCurrentUserActivity(data));
-        getUserAvgSessions(id).then(data => setCurrentUserSessions(data));
-    }, [id]);
+        Promise.all([
+            getUserPerfById(id).then(data => setCurrentUserPerf(data)),
+            getUserDataById(id).then(data => setCurrentUserData(data)),
+            getUserActivityById(id).then(data => setCurrentUserActivity(data)),
+            getUserAvgSessions(id).then(data => setCurrentUserSessions(data))
+        ]).catch(data => navigate("/Error"));
+        
+    }, [id, navigate]);
 
     // If no data received for this ID, redirection to Error page, else display user profile
-    if (currentUserData === undefined) {
-        navigate("/Error");
-    } else {
-        return(
-            <main className='flex flex--column'>
-                <h1>
-                    Bonjour
-                    <span className='firstName'> {currentUserData.userInfos.firstName}</span>
-                </h1>
-                <h2>
-                    Félicitations ! Vous avez explosé vos objectifs hier 👏
-                </h2>
+    return(
+        <main className='flex flex--column'>
+            <h1>
+                Bonjour
+                <span className='firstName'> {currentUserData.userInfos.firstName}</span>
+            </h1>
+            <h2>
+                Félicitations ! Vous avez explosé vos objectifs hier 👏
+            </h2>
 
-                <div className='flex flex--row profileDetailsContainer'>
-                    <ChartsContainer activityProps={currentUserActivity} sessionsProps={currentUserSessions} performanceProps={currentUserPerf} userScoreProps={currentUserData.score}/>
-                    <CardsContainer keyDataProps={currentUserData.keyData} />                    
-                </div>
-            </main>
-        );
-    }    
+            <div className='flex flex--row profileDetailsContainer'>
+                <ChartsContainer activityProps={currentUserActivity} sessionsProps={currentUserSessions} performanceProps={currentUserPerf} userScoreProps={currentUserData.score}/>
+                <CardsContainer keyDataProps={currentUserData.keyData} />                    
+            </div>
+        </main>
+    );   
 }
 export default ProfilePage;
