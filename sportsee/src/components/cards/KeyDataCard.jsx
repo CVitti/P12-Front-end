@@ -19,8 +19,10 @@ KeyDataCard.propTypes = {
 }
 
 /**
- * 
- * @param {*} param0 iconFile : String matching the icon name to display, keyData : String used to display the Keydata number (with comma if > 1000)
+ * Component used to display a KeyData with its value, unit and icon
+ * @param {object} props - Object containing data props to build all cards
+ * @param {string} props.iconFile - Matching the icon name to display
+ * @param {string} props.keyData - Keydata number (with comma if > 1000), parsed as string in any case
  * @returns JSX code for the section containing KeyData cards
  */
 function KeyDataCard({iconFile, keyData}) {

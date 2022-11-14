@@ -11,14 +11,14 @@ import { useEffect, useState } from 'react';
 import ChartsContainer from '../components/charts/ChartsContainer';
 import CardsContainer from '../components/cards/CardsContainer';
 
-// Fetch functions import from API services
+
+// Fetch functions import from API or mock services (use only one at once)
 import { getUserDataById, getUserPerfById, getUserActivityById, getUserAvgSessions } from '../services/fetchAPI';
-// Functions import from mockAPI services
 // import { getUserDataById, getUserPerfById, getUserActivityById, getUserAvgSessions } from '../services/mockAPI';
 
 /**
- * 
- * @returns Code for the Profile page (User personal infos, activity, performance, score, sessions)
+ * Profile page of the app (User personal infos, activity, performance, score, sessions)
+ * @returns JSX Code for the Profile page 
  */
 function ProfilePage(){
     

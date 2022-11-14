@@ -12,24 +12,24 @@ import ErrorPage from '../pages/ErrorPage';
 import '../styles/pages/App.css';
 
 /**
- * 
- * @returns Pages and components code according to the currently used route
+ * Router of the App
+ * @returns JSX code according to current Route
  */
 function AppRouter() {
   return (
-    <React.Fragment>
       <BrowserRouter>
-        <Routes>         
+        {/* Header and sidebar, common to every route */}
+        <Header />
+        <SideBar />
 
+        <Routes>         
           {/* Profile Route */}
-          <Route path="/user/:id" element={<React.Fragment> <Header /> <SideBar /> <ProfilePage /> </React.Fragment>}/>
+          <Route path="/user/:id" element={<ProfilePage />}/>
 
           {/* Error Route */}
-          <Route path="*" element={<React.Fragment> <Header /> <SideBar /> <ErrorPage /> </React.Fragment>}/>
-
+          <Route path="*" element={<ErrorPage /> }/>
         </Routes>
-      </BrowserRouter>
-    </React.Fragment>    
+      </BrowserRouter>  
   );
 }
 export default AppRouter;

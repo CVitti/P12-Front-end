@@ -7,8 +7,8 @@ import logoFile from "../assets/logo.svg";
 import '../styles/components/Logo.css'
 
 /**
- * 
- * @returns Code for the logo picture
+ * Logo contained in the app Header
+ * @returns JSX Code for the logo
  */
 function Logo() {
     return(

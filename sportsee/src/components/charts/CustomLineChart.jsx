@@ -25,8 +25,10 @@ CustomLineChart.propTypes = {
 }
 
 /**
- * 
- * @param {*} param0 sessionsProps : Object containing data for all user sessions. CustomTooltip : Function used to custom chart tooltip
+ * Chart displaying user sessions
+ * @param {object} props - Object containing data props to build the chart
+ * @param {object} props.sessionsProps - Object containing data for all user sessions
+ * @param {function} props.CustomTooltip - Function used to custom chart tooltip
  * @returns JSX code for the Average Session LineChart
  */
 function CustomLineChart({sessionsProps, CustomTooltip}){

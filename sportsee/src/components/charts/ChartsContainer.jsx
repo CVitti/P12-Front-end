@@ -47,8 +47,12 @@ ChartsContainer.propTypes = {
 }
 
 /**
- * 
- * @param {*} param0 activityProps : Object containing data for all user sessions, sessionsProps : Object containing data for all user sessions, activityProps : Object containing all user performance data, userScoreProps : Array containing user score Data,
+ * Component section containing all charts from the profile page
+ * @param {object} props - Object containing data props to build all charts
+ * @param {object} props.activityProps - Object containing data for all user activities
+ * @param {object} props.sessionsProps - Object containing data for all user sessions
+ * @param {object} props.activityProps - Object containing all user performance data
+ * @param {array} props.userScoreProps - Array containing user score Data
  * @returns JSX code for the section containing all charts
  */
 function ChartsContainer({ activityProps, sessionsProps, performanceProps, userScoreProps }){

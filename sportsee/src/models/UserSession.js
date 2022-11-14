@@ -4,7 +4,7 @@
 export default class UserSession{
     /**
      * @construct UserSession 
-     * @param {object} data User Sessions
+     * @param {object} data - User Sessions
      */
     constructor(data){
         const week = {

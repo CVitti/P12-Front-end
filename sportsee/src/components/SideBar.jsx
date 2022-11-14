@@ -7,8 +7,8 @@ import '../styles/components/SideBar.css';
 import SideIcon from './SideIcon';
 
 /**
- * 
- * @returns Code for the sidebar, containing icons components
+ * SideBar of the app, containing icons and copyright
+ * @returns JSX Code for the SideBar
  */
 function SideBar(){
     return(

@@ -18,9 +18,10 @@ SideIcon.propTypes = {
 }
 
 /**
- * 
- * @param {*} iconType Type of icon that will be displayed in the sideBar (as a string)
- * @returns Code for a sidebar icon
+ * Chart displaying user sessions
+ * @param {object} props - Object containing data props to build the icon
+ * @param {string} props.iconType - Object containing data for all user sessions
+ * @returns JSX code for an icon in the SideBar
  */
 function SideIcon({iconType}){
     return(

@@ -10,8 +10,8 @@ import { NavLink } from 'react-router-dom';
 import '../styles/components/Header.css';
 
 /**
- * 
- * @returns Code for the header, contains the logo picture and navigation links
+ * Header of the app, containing nav links and logo
+ * @returns JSX Code for the Header
  */
 function Header(){
  return (

@@ -20,9 +20,10 @@ CustomRadialBarChart.propTypes = {
 }
 
 /**
- * 
- * @param {*} param0 userScoreProps : Array containing user score Data.
- * @returns JSX code for the User Score RadialBarChart
+ * Chart displaying user score
+ * @param {object} props - Object containing data props to build the chart
+ * @param {array} props.userScoreProps - Array containing user score
+ * @returns JSX code for the Score RadialChart
  */
 function CustomRadialBarChart({userScoreProps}){
     return(

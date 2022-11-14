@@ -4,10 +4,12 @@ import UserSession from "../models/UserSession";
 import UserActivity from "../models/UserActivity";
 import UserPerformance from "../models/UserPerformance";
 
+
 /**
- * 
- * @param {*} userId collected from URL before calling function
- * @returns user data as an object to be displayed
+ * It fetches data from the server, parses it as JSON, and returns a new UserData object if the
+ * response was successful, otherwise it throws an error.
+ * @param {number} userId - The id of the user you want to get the data for.
+ * @returns A Promise that resolves to a UserData object.
  */
 async function getUserDataById(userId) {
     const response = await fetch("http://localhost:3000/user/" + userId);
@@ -20,10 +22,13 @@ async function getUserDataById(userId) {
 }
 export {getUserDataById};
 
+
+
 /**
- * 
- * @param {*} userId collected from URL before calling function
- * @returns user performance data as an object to be displayed
+ * It fetches data from the server, parses it as JSON, and returns a new UserPerformance object if the
+ * response is ok, otherwise it throws an error.
+ * @param {number} userId - The id of the user you want to get the performance for.
+ * @returns A promise that resolves to a UserPerformance object.
  */
 async function getUserPerfById(userId) {
     const response = await fetch("http://localhost:3000/user/" + userId + "/performance");
@@ -36,12 +41,14 @@ async function getUserPerfById(userId) {
 }
 export {getUserPerfById};
 
+
 /**
- * 
- * @param {*} userId collected from URL before calling function
- * @returns user activity data as an object to be displayed
+ * It fetches data from the server, parses it as JSON, and returns a new UserActivity object if the
+ * response is ok, otherwise it throws an error.
+ * @param {number} userId - The id of the user you want to get the activity for.
+ * @returns A promise that resolves to a UserActivity object.
  */
- async function getUserActivityById(userId) {
+async function getUserActivityById(userId) {
     const response = await fetch("http://localhost:3000/user/" + userId + "/activity");
     const data = await response.json();
     if (response.ok) {
@@ -52,12 +59,14 @@ export {getUserPerfById};
 }
 export {getUserActivityById};
 
+
 /**
- * 
- * @param {*} userId collected from URL before calling function
- * @returns user average sessions data as an object to be displayed
+ * It fetches the average time of sessions for a user from the server and returns a UserSession
+ * object.
+ * @param {number} userId - The id of the user you want to get the sessions for.
+ * @returns A promise that resolves to a UserSession object.
  */
- async function getUserAvgSessions(userId) {
+async function getUserAvgSessions(userId) {
     const response = await fetch("http://localhost:3000/user/" + userId + "/average-sessions");
     const data = await response.json();        
     if (response.ok) {

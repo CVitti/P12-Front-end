@@ -4,8 +4,8 @@
 import '../styles/pages/ErrorPage.css';
 
 /**
- * 
- * @returns Code for the Profile page (User personal infos, activity, performance, score, sessions)
+ * Error page used for wrong routes or unknown ID
+ * @returns JSX Code for the Error page
  */
 function ErrorPage(){
     return(

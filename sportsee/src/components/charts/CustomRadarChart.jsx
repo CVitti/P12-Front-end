@@ -24,8 +24,9 @@ CustomRadarChart.propTypes = {
 }
 
 /**
- * 
- * @param {*} param0 activityProps : Object containing all user performance data.
+ * Chart displaying user performance
+ * @param {object} props - Object containing data props to build the chart
+ * @param {object} props.performanceProps - Object containing all user performance data
  * @returns JSX code for the Performance RadarChart
  */
 function CustomRadarChart({performanceProps}){

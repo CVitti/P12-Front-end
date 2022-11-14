@@ -1,7 +1,8 @@
 /**
- * 
- * @param {*} activities Object containing all activity sessions, used to add an index to display for each session on the barChart
- * @returns number of the minimal weight from all sessions
+ * It loops through the activities.sessions object and returns the lowest value of the 'kilogram'
+ * property.
+ * @param {object} activities - the object that contains the sessions
+ * @returns {number} The minimum weight of the activities.
  */
 function getMinWeight(activities){
     let minWeight = 0;
@@ -15,9 +16,10 @@ function getMinWeight(activities){
 export {getMinWeight};
 
 /**
- * 
- * @param {*} activities Object containing all activity sessions, used to add an index to display for each session on the barChart
- * @returns number of the maximal weight from all sessions
+ * It loops through the activities.sessions object and returns the highest value of the 'kilogram'
+ * property.
+ * @param {object} activities - the object that contains the sessions
+ * @returns {number} The maximum weight of all the activities.
  */
 function getMaxWeight(activities){
     let maxWeight = 0;
@@ -31,9 +33,10 @@ function getMaxWeight(activities){
 export {getMaxWeight};
 
 /**
- * 
- * @param {*} num number to modify
- * @returns the number, as a string, containing a comma separator every 3 char
+ * If there are three or more digits to the right of the decimal point, insert a comma after every
+ * three digits.
+ * @param {number} num - The number you want to add commas to.
+ * @returns {string} the number with commas.
  */
 function commafy(num) {
     let commas = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

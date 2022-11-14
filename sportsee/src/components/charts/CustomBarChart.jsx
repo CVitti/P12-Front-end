@@ -29,8 +29,10 @@ CustomBarChart.propTypes = {
 }
 
 /**
- * 
- * @param {*} param0 activityProps : Object containing data for all user sessions. CustomTooltip : Function used to custom chart tooltip
+ * Chart displaying user activity
+ * @param {object} props - Object containing data props to build the chart
+ * @param {object} props.activityProps - Object containing data for all user activities
+ * @param {function} props.CustomTooltip - Function used to custom chart tooltip
  * @returns JSX code for the Activity Barchart
  */
 function CustomBarChart({activityProps, CustomTooltip}){

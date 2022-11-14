@@ -2,6 +2,10 @@
  * Formatting kind value to display French name instead of index and reverse their order to be displayed in the chart
  */
 export default class UserPerformance{
+    /**
+     * @construct UserPerformance 
+     * @param {object} data - User performance
+     */
     constructor(data){
         const kind = {
             1: 'Cardio',
